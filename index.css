@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.features .card{
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.features .card i{
+    font-size: 40px;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(235, 8, 83, 0.766);
+    width: 60px;
+}   
+
+.features .card h5{
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.features .card:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.features .card:hover i{
+    background-color: #fff;
+    color: rgba(235, 8, 83, 0.766);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.features .card:hover h5{
+    color: rgba(235, 8, 83, 0.766);
+    transition: color 0.3s ease-in-out;
+}
