@@ -1,44 +1,280 @@
+/* ===== Global ===== */
+
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-.features .card{
-    border-radius: 10px;
-    background-color: #fff;
-    padding: 30px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.features .card i{
-    font-size: 40px;
-    padding: 10px;
-    color: #fff;
-    border-radius: 10px;
-    background-color: rgba(235, 8, 83, 0.766);
-    width: 60px;
-}   
-
-.features .card h5{
-    font-weight: 600;
-    padding: 10px;
-    border-radius: 10px;
+html{
+    scroll-behavior:smooth;
 }
 
-.features .card:hover{
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    cursor: pointer;
+body{
+    overflow-x:hidden;
 }
 
-.features .card:hover i{
-    background-color: #fff;
-    color: rgba(235, 8, 83, 0.766);
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+/* ===== Header ===== */
+
+.header{
+    transition:.4s;
 }
 
-.features .card:hover h5{
-    color: rgba(235, 8, 83, 0.766);
-    transition: color 0.3s ease-in-out;
+.header.shadow{
+    background:rgba(235,8,83,.95);
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+
+/* ===== Navbar ===== */
+
+.navbar-nav .nav-link{
+    position:relative;
+}
+
+.navbar-nav .nav-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:white;
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after{
+    width:100%;
+}
+
+
+/* ===== Hero ===== */
+
+.hero{
+    min-height:100vh;
+}
+
+.hero-content{
+    padding-top:100px;
+}
+
+.button-app .btn{
+    transition:.3s;
+}
+
+.button-app .btn:hover{
+    background:white;
+    color:rgba(235,8,83,.85);
+}
+
+#typing-text::after{
+    content:"|";
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+
+/* ===== Scroll Reveal ===== */
+
+.card{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.8s ease;
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* ===== Feature Cards ===== */
+
+.feature-card{
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 .125rem .25rem rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.feature-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.feature-card i{
+    width:70px;
+    height:70px;
+    font-size:28px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(235,8,83,.85);
+    color:white;
+
+    border-radius:18px;
+    margin:20px;
+
+    transition:.4s;
+}
+
+.feature-card:hover i{
+    background:white;
+    color:rgba(235,8,83,.85);
+}
+
+.feature-card .card-title{
+    transition:.3s;
+    font-weight:700;
+}
+
+.feature-card:hover .card-title{
+    color:rgba(235,8,83,.85);
+}
+
+
+/* ===== Overview ===== */
+
+.overview h1{
+    font-weight:700;
+}
+
+
+/* ===== Pricing Cards ===== */
+
+.pricing-card{
+    border-radius:20px;
+    box-shadow:0 .125rem .25rem rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.pricing-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.pricing-card button{
+    transition:.3s;
+}
+
+.pricing-card:hover button{
+    background:rgba(235,8,83,.85)!important;
+}
+
+.pricing-card .list-group-item{
+    border:none;
+}
+
+
+/* ===== Footer ===== */
+
+.footer{
+    background:#081828;
+    color:white;
+}
+
+.footer-top{
+    padding:100px 0;
+}
+
+.footer ul{
+    list-style:none;
+    padding-left:0;
+}
+
+.footer li{
+    margin-bottom:10px;
+}
+
+.footer a{
+    text-decoration:none;
+    color:#adb5bd;
+    transition:.3s;
+}
+
+.footer a:hover{
+    color:rgba(235,8,83,.85);
+}
+
+
+/* ===== Social ===== */
+
+.social{
+    display:flex;
+    gap:15px;
+}
+
+.social i{
+    font-size:20px;
+}
+
+
+/* ===== Scroll Top Button ===== */
+
+.scroll-top{
+    position:fixed;
+    right:30px;
+    bottom:30px;
+
+    width:50px;
+    height:50px;
+
+    background:rgba(235,8,83,.85);
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.4s;
+
+    z-index:999;
+}
+
+.scroll-top.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.scroll-top:hover{
+    transform:translateY(-5px);
+}
+
+
+/* ===== Responsive ===== */
+
+@media(max-width:992px){
+
+    .hero-content{
+        text-align:center;
+    }
+
+    .button-app{
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .feature-card,
+    .pricing-card{
+        margin-bottom:20px;
+    }
+
 }
